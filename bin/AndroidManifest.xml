@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="my.com.opendata.goodscycle"
+    android:versionCode="2014032700"
+    android:versionName="1.4" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_icon"
+        android:logo="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="my.com.opendata.goodscycle.SplashActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!--  Main Activity -->
+        <activity
+            android:label="@string/app_name"
+            android:name="my.com.opendata.goodscycle.MainActivity"></activity>
+        
+        <!-- Navigation Activity -->
+        <activity 
+            android:label="@string/app_name"
+            android:name="my.com.opendata.goodscycle.NavigationActivity" ></activity>
+        
+        <!-- Reminder Service 
+       	<service
+       	    android:enabled="true"
+       	    android:name=".ReminderService" />
+        -->
+        
+        <receiver 
+            android:name=".AlarmManagerBroadcastReceiver" />
+        
+    </application>
+
+</manifest>
